@@ -25,12 +25,12 @@ Eigenbackground Paper Files
   <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
     <td><img src="./code/output/highway/16_StrongEigenVectors_BG.jpg" alt="Backgound - strong vectors" width = 240px ></td>
-    <td><img src="./code/output/highway/16_16_WeakEigenVectors_BG.jpg" alt="Backgound - weak vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_WeakEigenVectors_BG.jpg" alt="Backgound - weak vectors" width = 240px ></td>
    </tr> 
    <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
-    <td><img src="./code/output/highway/16_16_StrongEigenVectors_FG.png" alt="Foregound - strong vectors" width = 240px ></td>
-    <td><img src="./code/output/highway/16_16_WeakEigenVectors_FG.png" alt="Foregound - weak vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_StrongEigenVectors_FG.png" alt="Foregound - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foregound - weak vectors" width = 240px ></td>
   </tr>
 </table>
 
