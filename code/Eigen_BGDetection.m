@@ -79,12 +79,12 @@ for x=1:nBlock(2)
                 qr_order(i) = f;
             end
             figure(3)
-            subplot(141); imshow(uint8(B))
+            subplot(121); imshow(uint8(B))
             imwrite(uint8(B),[masir 'columnized_frames.jpg']);
-            subplot(142); imshow(uint8(B(:,qr_order)))
+            subplot(122); imshow(uint8(B(:,qr_order)))
             imwrite(uint8(B(:,qr_order)),[masir 'columnized_frames_reordered.jpg']);
-            subplot(222); bar(v)
-            subplot(224); bar(abs(diag(R)))
+            % subplot(222); bar(v)
+            % subplot(224); bar(abs(diag(R)))
             
             figure(4)
             i = 1;
