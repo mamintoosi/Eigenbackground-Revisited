@@ -12,18 +12,18 @@ The most codes in folder *code* are related to ['Highway'](./code/input/highway.
 ## Codes review:
 
 ### Eigen_BGDetection.m
-This script compute the eigenbackground of the aformentioned 'Highway' video with eigenvectors related to the largest and the weakest eigenvalues. The default number of the eigenvectors is 10, which may be changed by variable *r* in the script.
-'Highway' video is 320x240, here the eigenbackground is computed in 40x40 non-overlapping blocks. For testing other block size, it is suffecient to change *winSize* variable. The block size can be considered to the height of the video, if the video frames are square. If you like to runthe program with block size, equal to the frame height, it is suffecient to resize the input video, by uncomment the appropriate command: *avi(k).cdata = im(1:240,1:240)*.
+This script compute the eigenbackground of the aforementioned 'Highway' video with eigenvectors related to the largest and the weakest eigenvalues. The default number of the eigenvectors is 10, which may be changed by variable *r* in the script.
+'Highway' video is 320x240, here the eigenbackground is computed in 40x40 non-overlapping blocks. For testing other block size, it is sufficient to change *winSize* variable. The block size can be considered to the height of the video, if the video frames are square. If you like to runthe program with block size, equal to the frame height, it is sufficient to resize the input video, by uncomment the appropriate command: *avi(k).cdata = im(1:240,1:240)*.
 
 By running this script, the background models will be computed and saved in the folder *code/output/highway*, with the following file names: <br>
-*StrongEigenVectors_BG.jpg*  : Backgound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
-*WeakEigenVectors_BG.jpg*  : Backgound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+*StrongEigenVectors_BG.jpg*  : Background model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+*WeakEigenVectors_BG.jpg*  : Background model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
 
-Also the thresholded difference of an specified frame (default 16) with the computed backgrounds is saved, as the foregrounds. These images are also saved in the above folder with the following names:
-*16_StrongEigenVectors_FG.jpg*  : Foregound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
-*16_WeakEigenVectors_FG.jpg*  : Foregound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+Also the threshold-ed difference of an specified frame (default 16) with the computed backgrounds is saved, as the foregrounds. These images are also saved in the above folder with the following names:
+*16_StrongEigenVectors_FG.jpg*  : Foreground model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+*16_WeakEigenVectors_FG.jpg*  : Foreground model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
 
-The test frame number (16) and the thresold can be changed.
+The test frame number (16) and the threshold can be changed.
 The following table shows the result:
 
 <video width="320" height="240" controls>
@@ -38,22 +38,22 @@ The following table shows the result:
    </tr> 
   <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
-    <td><img src="./code/output/highway/StrongEigenVectors_BG.jpg" alt="Backgound - strong vectors" width = 240px ></td>
-    <td><img src="./code/output/highway/WeakEigenVectors_BG.jpg" alt="Backgound - weak vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/StrongEigenVectors_BG.jpg" alt="Background - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/WeakEigenVectors_BG.jpg" alt="Background - weak vectors" width = 240px ></td>
    </tr> 
    <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
-    <td><img src="./code/output/highway/16_StrongEigenVectors_FG.png" alt="Foregound - strong vectors" width = 240px ></td>
-    <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foregound - weak vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_StrongEigenVectors_FG.png" alt="Foreground - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foreground - weak vectors" width = 240px ></td>
   </tr>
 </table>
 
 <table>
   <tr>
     <td> A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
-<img src="./code/output/highway/16-40x40.jpg"  alt="Frame 16" width = 240px >
+<img src="./code/output/tmp/16-40x40.jpg"  alt="Frame 16" width = 240px >
 
-The temporal and QR order of columinzed version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
+The temporal and QR order of columnized version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
 *columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
 
 These imgaes are demonstrated at the right:
@@ -67,15 +67,13 @@ These imgaes are demonstrated at the right:
   </tr>
 </table>
 
-A 40x40 block demonstrated with a green square, shown in the following image, is selected for further investigation:
+### pcaDigitsVisGrid.m
+This file is used to show the effect of different principal components sub-spaces, 3 last figures of the paper and their animated versions in supplementary material.
+For 'Highway' video, the results are saved in folder 'code/output/highway/uniformPoints'.
+For each combination of two successive principal components, such as 97 and 98, a folder named 97_98 is created in the above folder. The images in each folder is numbered as matrix elements, that can be used later in LaTeX. for example, the following image in the paper is produced by appropriate LaTeX code and the images in the above folder:
 
-![](./code/output/highway/16-40x40.jpg)
+<img src="./code/output/tmp/highway_97_98_images.jpg"  alt="PC 97 & 98" width = 240px >
 
-The temporal and QR order of columinzed version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
-*columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
-
-
- ![columnized_frames](./code/output/highway/columnized_frames.jpg) ![columnized_frames_reordered](./code/output/highway/columnized_frames_reordered.jpg) 
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
