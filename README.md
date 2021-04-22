@@ -59,8 +59,10 @@ The temporal and QR order of columinzed version of this block are produced with 
 These imgaes are demonstrated at the right:
 </td>
     <td> 
-	<img src="./code/output/highway/columnized_frames.jpg" alt="columnized_frames" width = 200px height=800px >
-	<img src="./code/output/highway/columnized_frames_reordered.jpg" alt="columnized_frames_reordered" width = 200px height=800px >
+	<img src="./code/output/highway/columnized_frames.jpg" alt="columnized_frames" width = 200px height=600px >
+	</td>
+	<td>
+	<img src="./code/output/highway/columnized_frames_reordered.jpg" alt="columnized_frames_reordered" width = 200px height=600px >
 	</td>
   </tr>
 </table>
