@@ -39,24 +39,24 @@ The following table shows the result:
   <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
     <td><img src="./code/output/highway/StrongEigenVectors_BG.jpg" alt="Backgound - strong vectors" width = 240px ></td>
-    <td><img src="./code/output/highway/16_WeakEigenVectors_BG.jpg" alt="Backgound - weak vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/WeakEigenVectors_BG.jpg" alt="Backgound - weak vectors" width = 240px ></td>
    </tr> 
    <tr>
     <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
-    <td><img src="./code/output/highway/StrongEigenVectors_FG.png" alt="Foregound - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_StrongEigenVectors_FG.png" alt="Foregound - strong vectors" width = 240px ></td>
     <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foregound - weak vectors" width = 240px ></td>
   </tr>
 </table>
 
 A 40x40 block demonstrated with a green square, shown in the following image, is selected for further investigation:
 
-![](./code/output/highway/16 - 40x40.jpg)
+![](./code/output/highway/16-40x40.jpg)
 
 The temporal and QR order of columinzed version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
-*columnized_frames.jpg* ,*columnized_frames_reordered*
+*columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
 
 | --- | --- |
-| ![columnized_frames](./code/output/highway/columnized_frames.jpg) |
+| ![columnized_frames](./code/output/highway/columnized_frames.jpg)
 | ![columnized_frames_reordered](./code/output/highway/columnized_frames_reordered.jpg) |
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
