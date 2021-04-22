@@ -1,16 +1,30 @@
 # Eigenbackground-Revisited
-Eigenbackground Paper Files
+MATLAB code for the following paper:<br>
+*Eigenbackground Revisited: Can We Model the Background with Eigenvectors?* (draft)
 
-## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
+## Requirements
+The codes are tested on MATLAB 2017 & 2018 in Win10, but should work for other versions, too.
 
-    Error using VideoReader/init (line 601)
-    The file requires the following codec(s) to be installed
-    on your system:
-	    cvid
-	
+The most codes in folder 'code' are related to ['Highway'](./code/input/highway.avi) video, which is used for many experimental results in the paper.
 
 ![](./code/input/highway.avi)
 
+## Codes review:
+
+### Eigen_BGDetection.m
+This script compute the eigenbackground of the aformentioned 'Highway' video with eigenvectors related to the largest and the weakest eigenvalues. The default number of the eigenvectors is 10, which may be changed by variable 'r' in the script.
+'Highway' video is 320x240, here the eigenbackground is computed in 40x40 non-overlapping blocks. For testing other block size, it is suffecient to change 'winSize' variable. The block size can be considered to the height of the video, if the video frames are square. If you like to runthe program with block size, equal to the frame height, it is suffecient to resize the input video, by uncomment the appropriate command: 'avi(k).cdata = im(1:240,1:240)'.
+
+By running this script, the background models will be computed and saved in the folder 'code/output/highway', with the following file names: <br>
+'StrongEigenVectors_BG.jpg'  : Backgound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+'WeakEigenVectors_BG.jpg'  : Backgound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+
+Also the thresholded difference of an specified frame (default 16) with the computed backgrounds is saved, as the foregrounds. These images are also saved in the above folder with the following names:
+'16_StrongEigenVectors_FG.jpg'  : Foregound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+'16_WeakEigenVectors_FG.jpg'  : Foregound model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+
+The test frame number (16) and the thresold can be changed.
+The following table shows the result:
 
 <video width="320" height="240" controls>
   <source src="./code/video/voigtclip_short.avi" type="video/avi">
@@ -34,3 +48,9 @@ Eigenbackground Paper Files
   </tr>
 </table>
 
+## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
+
+    Error using VideoReader/init (line 601)
+    The file requires the following codec(s) to be installed
+    on your system:
+	    cvid

@@ -146,9 +146,9 @@ for frameNo=16%firstFrameNo:lastFrameNo%length(avi)
     
 
     imwrite(Im1,[masir num2str(frameNo) '.jpg']);
-    imwrite(uint8(BG_ImPCA),[masir num2str(frameNo) '_StrongEigenVectors_BG'  '.jpg']);
+    imwrite(uint8(BG_ImPCA),[masir 'StrongEigenVectors_BG'  '.jpg']);
     imwrite(abs(BG_ImPCA-double(Im1))>threshold,[masir num2str(frameNo) '_StrongEigenVectors_FG.png']);
-    imwrite(uint8(BG_ImNonPCA),[masir num2str(frameNo) '_WeakEigenVectors_BG.jpg']);
+    imwrite(uint8(BG_ImNonPCA),[masir 'WeakEigenVectors_BG.jpg']);
     imwrite(abs(BG_ImNonPCA-double(Im1))>threshold,[masir num2str(frameNo) '_WeakEigenVectors_FG.png']);
     
     drawnow;
