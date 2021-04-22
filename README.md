@@ -48,6 +48,23 @@ The following table shows the result:
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td> A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
+<img src="./code/output/highway/16-40x40.jpg"  alt="Frame 16" width = 240px >
+
+The temporal and QR order of columinzed version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
+*columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
+
+These imgaes are demonstrated at the right:
+</td>
+    <td> 
+	<img src="./code/output/highway/columnized_frames.jpg" alt="columnized_frames" width = 200px height=800px >
+	<img src="./code/output/highway/columnized_frames_reordered.jpg" alt="columnized_frames_reordered" width = 200px height=800px >
+	</td>
+  </tr>
+</table>
+
 A 40x40 block demonstrated with a green square, shown in the following image, is selected for further investigation:
 
 ![](./code/output/highway/16-40x40.jpg)
@@ -55,9 +72,8 @@ A 40x40 block demonstrated with a green square, shown in the following image, is
 The temporal and QR order of columinzed version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
 *columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
 
-| --- | --- |
-| ![columnized_frames](./code/output/highway/columnized_frames.jpg)
-| ![columnized_frames_reordered](./code/output/highway/columnized_frames_reordered.jpg) |
+
+ ![columnized_frames](./code/output/highway/columnized_frames.jpg) ![columnized_frames_reordered](./code/output/highway/columnized_frames_reordered.jpg) 
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
