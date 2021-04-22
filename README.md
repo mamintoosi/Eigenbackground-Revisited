@@ -51,12 +51,12 @@ The following table shows the result:
 <table>
   <tr>
     <td> A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
-<img src="./code/output/tmp/16-40x40.jpg"  alt="Frame 16" width = 240px >
+<img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
 
 The temporal and QR order of columnized version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
 *columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
 
-These imgaes are demonstrated at the right:
+These images are demonstrated at the right:
 </td>
     <td> 
 	<img src="./code/output/highway/columnized_frames.jpg" alt="columnized_frames" width = 200px height=400px >
@@ -70,10 +70,18 @@ These imgaes are demonstrated at the right:
 ### pcaDigitsVisGrid.m
 This file is used to show the effect of different principal components sub-spaces, 3 last figures of the paper and their animated versions in supplementary material.
 For 'Highway' video, the results are saved in folder 'code/output/highway/uniformPoints'.
-For each combination of two successive principal components, such as 97 and 98, a folder named 97_98 is created in the above folder. The images in each folder is numbered as matrix elements, that can be used later in LaTeX. for example, the following image in the paper is produced by appropriate LaTeX code and the images in the above folder:
+For each combination of two successive principal components, such as 97 and 98, an image file (97_98_gridImages.png) is created to show the spread of the frames in that space:
 
-<img src="./code/output/tmp/highway_97_98_images.jpg"  alt="PC 97 & 98" width = 240px >
+<img src="./code/output/highway/uniformPoints/97_98_gridImages.png"  alt="PC 97 & 98" width = 240px >
 
+Also, a folder named 97_98 is created in the above folder that each image is saved separately for inserting in the paper. The images in each folder is numbered as matrix elements, that can be used later in LaTeX. For example, the following image in the paper is produced by appropriate LaTeX code and the images in the above folder:
+
+<img src="./code/tmp/highway_97_98_images.jpg"  alt="PC 97 & 98" width = 240px >
+
+Demonstration of the background/foreground instances as scatter plots, are also used by MATLAB plot and TikZ commands, which makes the following images; note that some required information are saved as text files.
+
+<img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 240px >
+<img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 240px >
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
