@@ -62,7 +62,7 @@ These imgaes are demonstrated at the right:
 	<img src="./code/output/highway/columnized_frames.jpg" alt="columnized_frames" width = 200px height=600px >
 	</td>
 	<td>
-	<img src="./code/output/highway/columnized_frames_reordered.jpg" alt="columnized_frames_reordered" width = 200px height=600px >
+	<img src="./code/output/highway/columnized_frames_reordered.jpg" alt="columnized_frames_reordered"  height=400px >
 	</td>
   </tr>
 </table>
