@@ -80,8 +80,8 @@ Also, a folder named 97_98 is created in the above folder that each image is sav
 
 Demonstration of the background/foreground instances as scatter plots, are also used by MATLAB plot and TikZ commands, which makes the following images; note that some required information are saved as text files.
 
-| --- | --- |
-|<img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 380px >|<img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 240px >|
+
+<img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 300px ><img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 200px >
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
