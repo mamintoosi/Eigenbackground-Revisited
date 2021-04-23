@@ -53,8 +53,8 @@ for nb = [10,50,90:30:N]%[6,16,51,101]
     axis([0 250 0 250])
     %     axis([0 1 0 1])
     
-%     fileName = sprintf('pca2D_BG_rnd_%d',nb-1);
-%     printPmtkFigure(fileName,'png','output');
+    fileName = sprintf('pca2D_BG_rnd_%d',nb-1);
+    printPmtkFigure(fileName,'png','output');
 %     pause
     % Produce LaTeX data
     masir = sprintf('output/PCA_vector_rnd');
