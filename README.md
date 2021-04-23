@@ -1,7 +1,7 @@
 # Eigenbackground-Revisited
 MATLAB code for the following paper:<br>
 *Eigenbackground Revisited: Can We Model the Background with Eigenvectors?* 
-![arxiv](https://arxiv.org/submit/3712550/view)
+<a href="https://arxiv.org/submit/3712550/view" target="_blank">arxiv link</a>
 
 ## Requirements
 The codes are tested on MATLAB 2017 & 2018 in Win10, but should work for other versions, too.
@@ -54,7 +54,7 @@ The following table shows the result:
     <td> A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
 <img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
 
-The temporal and QR order of columnized version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:
+The temporal and QR order of columnized version of this block are produced with the mentioned script. The results , demonstrated here is saved in the following files:<br>
 *columnized_frames.jpg* ,*columnized_frames_reordered.jpg*
 
 These images are demonstrated at the right:
