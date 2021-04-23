@@ -92,6 +92,10 @@ This script produce figure 5. Although the MATLAB plot output can be saved in fo
 
 <img src="./code/tmp/PCABGRnd.png"  alt="Figure 5" width = 240px >
 
+## WelfordAlg_Plot_norms.m
+
+This script produce figure 9. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
+<img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
