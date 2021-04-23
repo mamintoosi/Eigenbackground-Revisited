@@ -81,7 +81,7 @@ Also, a folder named 97_98 is created in the above folder that each image is sav
 Demonstration of the background/foreground instances as scatter plots, are also used by MATLAB plot and TikZ commands, which makes the following images; note that some required information are saved as text files.
 
 
-<img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 280px >  <img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 200px >
+<img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 290px >  <img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 200px >
 
 For above diagrams, it is necessary to know which frame belongs to background and which frame belongs to foreground. For the aforementioned 40x40 block of 'Highway' video, these classes were marked manually and the results were saved in *code/input/BGSamplePixels_highway.mat*. The script *code/tmp/show_block.m* load and shows this block. In addition the 2 green dots shown in figure 3, were saved in 
 *code/input/BGSamplePixels_highway_3pointsBGDetection.mat*.
@@ -95,6 +95,7 @@ This script produce figure 5. Although the MATLAB plot output can be saved in fo
 ## WelfordAlg_Plot_norms.m
 
 This script produce figure 9. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
+
 <img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
