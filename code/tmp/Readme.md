@@ -15,6 +15,11 @@ Install: https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe
 | ![Frame 16](./code/output/voigtclipshort/16.jpg) |![Foregound strong vectors](./code/output/voigtclipshort/16_EigenFG.png) |![Foregound weak vectors](./code/output/voigtclipshort/16_NonEigenFG.png)| 
 
 
+<video width="320" height="240" controls>
+  <source src="./code/video/voigtclip_short.avi" type="video/avi">
+</video>
+
+
 <table>
   <tr>
     <td> Frame No. 16</td>

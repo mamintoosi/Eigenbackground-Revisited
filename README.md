@@ -30,9 +30,24 @@ Also the threshold-ed difference of an specified frame (default 16) with the com
 The test frame number (16) and the threshold can be changed.
 The following table shows the result:
 
-<video width="320" height="240" controls>
-  <source src="./code/video/voigtclip_short.avi" type="video/avi">
-</video>
+<table>
+  <tr>
+    <td> Frame No. 16</td>
+    <td> B/F using 10 most strong eigenvectors</td>
+    <td>B/F using 10 weak eigenvectors</td>
+   </tr> 
+  <tr>
+    <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
+    <td><img src="./code/output/highway/StrongEigenVectors_BG.jpg" alt="Background - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/WeakEigenVectors_BG.jpg" alt="Background - weak vectors" width = 240px ></td>
+   </tr> 
+   <tr>
+    <td> <img src="./code/output/highway/16.jpg"  alt="Frame 16" width = 240px ></td>
+    <td><img src="./code/output/highway/16_StrongEigenVectors_FG.png" alt="Foreground - strong vectors" width = 240px ></td>
+    <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foreground - weak vectors" width = 240px ></td>
+  </tr>
+</table>
+
 
 A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
 
