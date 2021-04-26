@@ -1,7 +1,10 @@
 # Eigenbackground-Revisited
-MATLAB code for the following paper:<br>
+MATLAB code for the main results of the following paper:<br>
 *Eigenbackground Revisited: Can We Model the Background with Eigenvectors?* 
-<a href="https://arxiv.org/submit/3712550/view" target="_blank">arxiv link</a>
+
+<a href="http://arxiv.org/abs/2104.11379" target="_blank">arxiv link</a>
+, <a href="https://github.com/mamintoosi/Eigenbackground-Revisited/raw/master/Eigenbackground_Revisited_Supplementary.pdf" target="_blank">Supp</a>
+
 
 ## Requirements
 The codes are tested on MATLAB 2017 & 2018 in Win10, but should work for other versions, too.
