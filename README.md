@@ -32,6 +32,7 @@ The following table shows the result:
 </video>
 
 A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
+
 <img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
 
 ### pcaImagesVisGrid.m
