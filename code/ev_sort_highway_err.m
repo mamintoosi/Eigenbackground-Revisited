@@ -5,6 +5,7 @@
 clear all
 % loading only one 40x40 block of highway video
 load('input/BGSamplePixels_highway.mat')
+% Indices of background and foreground frames are indicated manually 
 
 blk_sz = 40;
 
@@ -26,7 +27,7 @@ ev_list = {...
     };
 xlabels = {'1','1-7','1-30','24-30','30'};
 
-frames_list = 1:n_frames-1;%[9,16];
+frames_list = 1:n_frames-1;
 Rec_errors = zeros(numel(ev_list),numel(frames_list));
 BG_errors = Rec_errors;
 
@@ -120,7 +121,7 @@ mkdir(output_path)
 file_name = sprintf('%s/RMSE_BGs.png', output_path);
 print(gcf,'-dpng',file_name);
 
-figNo = figNo+1;
+figNo = 3;
 figure(figNo), clf
 frames_lst = intersect(frames_list,F_indices);
 mean_Rec_errors = mean(Rec_errors(:,frames_lst),2);
