@@ -14,18 +14,8 @@ MATLAB code for the main results of the following paper:<br>
 ### Abstract
 
 <p align="justify">
-A popular research topic in Graph Convolutional Networks (GCNs) is to speedup
-the training time of the network. The main bottleneck in training GCN is the
-exponentially growing of computations.  In Cluster-GCN based on this fact that each
-node and its neighbors are usually grouped in the same cluster, considers the
-clustering structure of the graph, and expand each node’s neighborhood within
-each cluster when training GCN. The main assumption of Cluster-GCN is the
-weak relation between clusters; which is not correct at all graphs. Here we extend their approach by overlapped clustering, instead of crisp clustering which
-is used in Cluster-GCN. This is achieved by allowing the marginal nodes to
-contribute to training in more than one cluster. The evaluation of the proposed
-method is investigated through the experiments on several benchmark datasets.
-The experimental results show that the proposed method is more efficient than
-Cluster-GCN, in average.
+Using dominant eigenvectors for background modeling (usually known as Eigenbackground) is a common technique in the literature. However, its results suffer from noticeable artifacts.  Thus have been many attempts to reduce the artifacts by making some improvements/enhancement in the Eigenbackground algorithm.
+In this paper, we show the main problem of the Eigenbackground is in its own core and in fact, it is not a good idea to use strongest eigenvectors for modeling the background. Instead, we propose an alternative solution by exploiting the weakest eigenvectors (which are usually thrown away and treated as garbage data) for background modeling.  
 </p>
 
 ## Requirements
@@ -123,7 +113,7 @@ This script produce figure 8. As the previous script, this code produce both MAT
 This script produce images used in figures 9-11.  The following figure (fig 9 in paper) shows the error of eigenbackground for 30 first frames of highway video. First row shows the reconstruction error, and second row shows the error for background estimation.
 
 <p align="center">
-<img src="./code/tmp/RMSE_FGs.png"  alt="Figure 9" width = 240px >
+<img src="./code/tmp/RMSE_FGs.png"  alt="Figure 9" width = 320px >
 </p>
 
 ### eigenbackground_the_most_vs_the_least.m
