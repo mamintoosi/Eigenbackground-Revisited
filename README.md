@@ -1,10 +1,32 @@
 # Eigenbackground-Revisited
+==========
+ [![repo size](https://img.shields.io/github/repo-size/mamintoosi/Eigenbackground-Revisited.svg)](https://github.com/mamintoosi/Eigenbackground-Revisited/archive/master.zip)
+ [![GitHub forks](https://img.shields.io/github/forks/mamintoosi/Eigenbackground-Revisited)](https://github.com/mamintoosi/Eigenbackground-Revisited/network)
+[![GitHub issues](https://img.shields.io/github/issues/mamintoosi/Eigenbackground-Revisited)](https://github.com/mamintoosi/Eigenbackground-Revisited/issues)
+[![GitHub license](https://img.shields.io/github/license/mamintoosi/Eigenbackground-Revisited)](https://github.com/mamintoosi/Eigenbackground-Revisited/blob/main/LICENSE)
+
 MATLAB code for the main results of the following paper:<br>
 *Eigenbackground Revisited: Can We Model the Background with Eigenvectors?* 
 
 <a href="http://arxiv.org/abs/2104.11379" target="_blank">arxiv link</a>
 , <a href="https://github.com/mamintoosi/Eigenbackground-Revisited/raw/master/Eigenbackground_Revisited_Supplementary.pdf" target="_blank">Supp</a>
 
+### Abstract
+
+<p align="justify">
+A popular research topic in Graph Convolutional Networks (GCNs) is to speedup
+the training time of the network. The main bottleneck in training GCN is the
+exponentially growing of computations.  In Cluster-GCN based on this fact that each
+node and its neighbors are usually grouped in the same cluster, considers the
+clustering structure of the graph, and expand each node’s neighborhood within
+each cluster when training GCN. The main assumption of Cluster-GCN is the
+weak relation between clusters; which is not correct at all graphs. Here we extend their approach by overlapped clustering, instead of crisp clustering which
+is used in Cluster-GCN. This is achieved by allowing the marginal nodes to
+contribute to training in more than one cluster. The evaluation of the proposed
+method is investigated through the experiments on several benchmark datasets.
+The experimental results show that the proposed method is more efficient than
+Cluster-GCN, in average.
+</p>
 
 ## Requirements
 The codes are tested on MATLAB 2017 & 2018 in Win10, but should work for other versions, too.
@@ -54,7 +76,7 @@ A 40x40 block demonstrated with a yellow square, shown in the following image, i
 <img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
 
 ### pcaImagesVisGrid.m
-This file is used to show the effect of different principal components sub-spaces, 3 last figures of the paper and their animated versions in supplementary material.
+This file is used to show the effect of different principal components sub-spaces, figures 12-14 of the paper and their animated versions in supplementary material.
 For 'Highway' video, the results are saved in folder 'code/output/highway/uniformPoints'.
 For each combination of two successive principal components, such as 97 and 98, an image file (97_98_gridImages.png) is created to show the spread of the frames in that space:
 
@@ -80,9 +102,23 @@ This script produce figure 5. Although the MATLAB plot output can be saved in fo
 
 ## WelfordAlg_Plot_norms.m
 
-This script produce figure 9. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
+This script produce figure 8. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
 
 <img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
+
+## ev_sort_highway_err.m
+
+This script produce images used in figures 9-11.  The following figure (fig 9 in paper) shows the error of eigenbackground for 30 first frames of highway video. First row shows the reconstruction error, and second row shows the error for background estimation.
+
+<img src="./code/tmp/RMSE_FGs.png"  alt="Figure 9" width = 240px >
+
+
+## eigenbackground_the_most_vs_the_least.m
+
+This script produce figures of section *Eigenbackground in various sizes of foregrounds*.  
+
+<img src="./code/tmp/256_558_blocks.png"  alt="Figure 9" width = 240px >
+
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
