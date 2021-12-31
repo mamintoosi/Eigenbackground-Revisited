@@ -52,6 +52,7 @@ Also the threshold-ed difference of an specified frame (default 16) with the com
 The test frame number (16) and the threshold can be changed.
 The following table shows the result:
 
+<p align="center">
 <table>
   <tr>
     <td> Frame No. 16</td>
@@ -69,56 +70,69 @@ The following table shows the result:
     <td><img src="./code/output/highway/16_WeakEigenVectors_FG.png" alt="Foreground - weak vectors" width = 240px ></td>
   </tr>
 </table>
-
+</p>
 
 A 40x40 block demonstrated with a yellow square, shown in the following image, is selected for further investigation:
 
+<p align="center">
 <img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
+</p>
 
 ### pcaImagesVisGrid.m
 This file is used to show the effect of different principal components sub-spaces, figures 12-14 of the paper and their animated versions in supplementary material.
 For 'Highway' video, the results are saved in folder 'code/output/highway/uniformPoints'.
 For each combination of two successive principal components, such as 97 and 98, an image file (97_98_gridImages.png) is created to show the spread of the frames in that space:
 
+<p align="center">
 <img src="./code/output/highway/uniformPoints/97_98_gridImages.png"  alt="PC 97 & 98" width = 240px >
+</p>
 
 Also, a folder named 97_98 is created in the above folder that each image is saved separately for inserting in the paper. The images in each folder is numbered as matrix elements, that can be used later in LaTeX. For example, the following image in the paper is produced by appropriate LaTeX code and the images in the above folder:
 
+<p align="center">
 <img src="./code/tmp/highway_97_98_images.jpg"  alt="PC 97 & 98" width = 240px >
+</p>
 
 Demonstration of the background/foreground instances as scatter plots, are also used by MATLAB plot and TikZ commands, which makes the following images; note that some required information are saved as text files.
 
-
+<p align="center">
 <img src="./code/output/highway/uniformPoints/97_98_gridDots.png"  alt="PC 97 & 98" width = 290px >  <img src="./code/tmp/highway_97_98_scatter.png"  alt="PC 97 & 98" width = 200px >
+</p>
 
 For above diagrams, it is necessary to know which frame belongs to background and which frame belongs to foreground. For the aforementioned 40x40 block of 'Highway' video, these classes were marked manually and the results were saved in *code/input/BGSamplePixels_highway.mat*. The script *code/tmp/show_block.m* load and shows this block. In addition the 2 green dots shown in figure 3, were saved in 
 *code/input/BGSamplePixels_highway_3pointsBGDetection.mat*.
 
-## pcaDemo2d_BG_rnd.m
+### pcaDemo2d_BG_rnd.m
 
 This script produce figure 5. Although the MATLAB plot output can be saved in folder , but *code/output/PCA_vector_rnd*, but for achievement better quality, the TikZ data files are saved by this script in the mentioned folder, and in later with LaTeX codes, the plots of figure 5 are created:
 
+<p align="center">
 <img src="./code/tmp/PCABGRnd.png"  alt="Figure 5" width = 240px >
+</p>
 
-## WelfordAlg_Plot_norms.m
+### WelfordAlg_Plot_norms.m
 
 This script produce figure 8. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
 
+<p align="center">
 <img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
+</p>
 
-## ev_sort_highway_err.m
+### ev_sort_highway_err.m
 
 This script produce images used in figures 9-11.  The following figure (fig 9 in paper) shows the error of eigenbackground for 30 first frames of highway video. First row shows the reconstruction error, and second row shows the error for background estimation.
 
+<p align="center">
 <img src="./code/tmp/RMSE_FGs.png"  alt="Figure 9" width = 240px >
+</p>
 
-
-## eigenbackground_the_most_vs_the_least.m
+### eigenbackground_the_most_vs_the_least.m
 
 This script produce figures of section *Eigenbackground in various sizes of foregrounds*.  
 
+<p align="center">
 <img src="./code/tmp/256_558_blocks.png"  alt="Figure 9" width = 240px >
-
+</p>
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
 
