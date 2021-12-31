@@ -2,7 +2,7 @@
 % Foreground Detection
 % EigenBackground, using the most and the least eigenvectors
 
-r = VideoReader('video/ShoppingMall.mp4');
+r = VideoReader('input/ShoppingMall.mp4');
 n_frames = min([r.NumberOfFrames,558]);
 sample_frame_no = n_frames; %eq 558;
 
