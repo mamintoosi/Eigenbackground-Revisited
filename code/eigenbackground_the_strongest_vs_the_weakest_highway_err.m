@@ -5,7 +5,8 @@
 % loading only one 40x40 block of highway video
 load('input/BGSamplePixels_highway_3pointsBGDetection.mat')
 load('tmp/highway_GT.mat', 'true_bg')
-n_frames = 60;
+% B(:,62:end) = [];
+n_frames = 120;
 sample_frame_no = 16;%n_frames; %eq 558;
 
 im = uint8(B(:,sample_frame_no));
@@ -44,9 +45,10 @@ for n_eigen_vectors=1:n_frames
     FG_SEV = abs(BG_SEV-double(sample_frame))>threshold;
     FG_WEV = abs(BG_WEV-double(sample_frame))>threshold;
     
-%     figure(1);
-%     subplot(2,3,1); imshow(sample_frame);title('Current Frame');
-%     subplot(2,3,2);imshow(uint8(BG_SEV));title('EigenBackground-StrongEigenVectors')
+    figure(1);
+    subplot(2,3,1); imshow(sample_frame);title(['EV ', num2str(n_eigen_vectors)]);
+    subplot(2,3,2);imshow(uint8(BG_SEV));title('EigenBackground-StrongEigenVectors')
+%     pause
 %     subplot(2,3,3);imagesc(uint8(FG_SEV));
 %     title('Detected Foreground'); axis equal; axis off;
 %     subplot(2,3,4); imshow(sample_frame);title('Current Frame');
@@ -74,7 +76,9 @@ for n_eigen_vectors=1:n_frames
 %     imwrite(uint8(reshape(x,blk_sz,blk_sz)),[file_name '_WeakEigenVectors_raw.png']);
     
 end
+%%
 bg_error([1,3,5,7])
-bg_error([60,58,56,54])
+% bg_error([60,58,56,54])
+bg_error([end,end-2,end-4,end-6])
 
 
