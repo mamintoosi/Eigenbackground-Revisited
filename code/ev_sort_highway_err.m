@@ -11,7 +11,8 @@ blk_sz = 40;
 
 true_bg = mean(B(:,B_indices),2);
 true_bg_im = uint8(reshape(true_bg, blk_sz,blk_sz));
-
+% save('tmp/highway_GT.mat', 'true_bg')
+%%
 n_frames = 31; % Number of PCs will be n_frames-1
 B(:,n_frames+1:end) = [];
 %
