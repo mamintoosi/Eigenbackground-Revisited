@@ -27,17 +27,28 @@ The most codes in folder *code* are related to ['Highway'](./code/input/highway.
 
 ## Codes review:
 
+### pcaDemo2d_BG_rnd.m
+*Figure 5*<br>
+This script produce figure 5. Although the MATLAB plot output can be saved in folder , but *code/output/PCA_vector_rnd*, but for achievement better quality, the TikZ data files are saved by this script in the mentioned folder, and in later with LaTeX codes, the plots of figure 5 are created:
+
+<p align="center">
+<img src="./code/tmp/PCABGRnd.png"  alt="Figure 5" width = 240px >
+</p>
+
+
 ### Eigen_BGDetection.m
-This script compute the eigenbackground of the aforementioned 'Highway' video with eigenvectors related to the largest and the weakest eigenvalues. The default number of the eigenvectors is 10, which may be changed by variable *r* in the script.
+*Figures 6 and 7 of the paper*<br>
+
+This script compute the eigenbackground of the aforementioned 'Highway' video with eigenvectors related to the strongest and the weakest eigenvalues. The default number of the eigenvectors is 10, which may be changed by variable *r* in the script.
 'Highway' video is 320x240, here the eigenbackground is computed in 40x40 non-overlapping blocks. For testing other block size, it is sufficient to change *winSize* variable. The block size can be considered to the height of the video, if the video frames are square. If you like to runthe program with block size, equal to the frame height, it is sufficient to resize the input video, by uncomment the appropriate command: *avi(k).cdata = im(1:240,1:240)*.
 
 By running this script, the background models will be computed and saved in the folder *code/output/highway*, with the following file names: <br>
-*StrongEigenVectors_BG.jpg*  : Background model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
-*WeakEigenVectors_BG.jpg*  : Background model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+*StrongEigenVectors_BG.jpg*  : Background model computed according to the strongest eigenvectors<br>
+*WeakEigenVectors_BG.jpg*  : Background model computed according to the weakest eigenvectors<br>
 
 Also the threshold-ed difference of an specified frame (default 16) with the computed backgrounds is saved, as the foregrounds. These images are also saved in the above folder with the following names:
-*16_StrongEigenVectors_FG.jpg*  : Foreground model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
-*16_WeakEigenVectors_FG.jpg*  : Foreground model computed according to the eigenvectors corresponding to the largest eigenvalues<br>
+*16_StrongEigenVectors_FG.jpg*  : Foreground model computed according to the strongest eigenvectors<br>
+*16_WeakEigenVectors_FG.jpg*  : Foreground model computed according to the weakest eigenvectors<br>
 
 The test frame number (16) and the threshold can be changed.
 The following table shows the result:
@@ -68,7 +79,28 @@ A 40x40 block demonstrated with a yellow square, shown in the following image, i
 <img src="./code/tmp/16-40x40.jpg"  alt="Block 40x40 in x=y=5" width = 240px >
 </p>
 
+
+### WelfordAlg_Plot_norms.m
+*Figure 8*<br>
+
+This script produce figure 8. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
+
+<p align="center">
+<img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
+</p>
+
+### ev_sort_highway_err.m, ev_errs_shoppingMall.m
+*Figures 9-11*<br>
+
+This script produce images used in figures 9-11.  The following figure (fig 9 in paper) shows the error of eigenbackground for 30 first frames of highway video. First row shows the reconstruction error, and second row shows the error for background estimation. The small images produced and saved by the program, but added manually.
+
+<p align="center">
+<img src="./code/tmp/RMSE_rec_bg_2.png"  alt="Figure 9" width = 320px >
+</p>
+
+
 ### pcaImagesVisGrid.m
+*Figures 12-14*<br>
 This file is used to show the effect of different principal components sub-spaces, figures 12-14 of the paper and their animated versions in supplementary material.
 For 'Highway' video, the results are saved in folder 'code/output/highway/uniformPoints'.
 For each combination of two successive principal components, such as 97 and 98, an image file (97_98_gridImages.png) is created to show the spread of the frames in that space:
@@ -92,36 +124,19 @@ Demonstration of the background/foreground instances as scatter plots, are also 
 For above diagrams, it is necessary to know which frame belongs to background and which frame belongs to foreground. For the aforementioned 40x40 block of 'Highway' video, these classes were marked manually and the results were saved in *code/input/BGSamplePixels_highway.mat*. The script *code/tmp/show_block.m* load and shows this block. In addition the 2 green dots shown in figure 3, were saved in 
 *code/input/BGSamplePixels_highway_3pointsBGDetection.mat*.
 
-### pcaDemo2d_BG_rnd.m
 
-This script produce figure 5. Although the MATLAB plot output can be saved in folder , but *code/output/PCA_vector_rnd*, but for achievement better quality, the TikZ data files are saved by this script in the mentioned folder, and in later with LaTeX codes, the plots of figure 5 are created:
+### eigenbackground_shoppingMall_various_sizes.m
+*Figures 16-19*<br>
 
-<p align="center">
-<img src="./code/tmp/PCABGRnd.png"  alt="Figure 5" width = 240px >
-</p>
-
-### WelfordAlg_Plot_norms.m
-
-This script produce figure 8. As the previous script, this code produce both MATLAB plot and data for TikZ plot:
+This script produce figures of section 4.4 *Effect of the Foreground Object’s Size*.  
 
 <p align="center">
-<img src="./code/tmp/v_vp.png"  alt="Figure 9" width = 240px >
-</p>
-
-### ev_sort_highway_err.m
-
-This script produce images used in figures 9-11.  The following figure (fig 9 in paper) shows the error of eigenbackground for 30 first frames of highway video. First row shows the reconstruction error, and second row shows the error for background estimation.
-
-<p align="center">
-<img src="./code/tmp/RMSE_FGs.png"  alt="Figure 9" width = 320px >
-</p>
-
-### eigenbackground_the_most_vs_the_least.m
-
-This script produce figures of section *Eigenbackground in various sizes of foregrounds*.  
-
-<p align="center">
-<img src="./code/tmp/256_558_blocks.png"  alt="Figure 9" width = 240px >
+<table>
+  <tr>
+    <td> <img src="./code/tmp/256_558_blocks.png"  alt="Figure 15" width = 240px ></td>
+    <td> <img src="./code/tmp/Fig16.png"  alt="Figure 16" width = 240px ></td>
+   </tr> 
+</table>
 </p>
 
 ## In the case of the following error, install [these codecs:](https://files3.codecguide.com/K-Lite_Codec_Pack_1612_Basic.exe)
