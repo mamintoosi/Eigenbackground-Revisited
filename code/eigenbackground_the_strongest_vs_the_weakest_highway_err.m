@@ -1,17 +1,16 @@
-% Mahmood AminToosi, HSU, 2021
-% Foreground Detection
+% Mahmood AminToosi, HSU, 2022
 % EigenBackground, using the first and the last eigenvectors
 
 % loading only one 40x40 block of highway video
 load('input/BGSamplePixels_highway_3pointsBGDetection.mat')
 load('tmp/highway_GT.mat', 'true_bg')
-% B(:,62:end) = [];
+
 n_frames = 120;
-sample_frame_no = 16;%n_frames; %eq 558;
+sample_frame_no = 16;
 
 im = uint8(B(:,sample_frame_no));
-% Different block sizes
-blk_sz = 40; %[32, 64, 128, 256];
+
+blk_sz = 40; 
 
 BG_ImPCA=double(im);
 BG_ImNonPCA=BG_ImPCA;
@@ -21,64 +20,34 @@ Bg_Princomp=BG_ImPCA;
 % Background modeling
 [pc,score,v,tsquare] = pca(B');
 mu = mean(B,2);
-
-for n_eigen_vectors=1:n_frames
+print_list = [1, 3, 5, 7, 114, 116, 118, 120]; 
+for n_eigen_vector=1:n_frames
     
-    phi=pc(:,n_eigen_vectors);
-    phiNonPCA=pc(:,end-n_eigen_vectors+1);
+    phi=pc(:,n_eigen_vector);
     
     sample_frame = reshape(im,blk_sz,blk_sz);
     sample_frame_col = B(:,sample_frame_no);
     Xi = sample_frame_col - mu;
     Bi = phi'*Xi;    % Project onto Strongest EigenVectors
-    BG_SEV = phi*Bi+mu;  % Reconstruct from projection
-    bg_err = BG_SEV - true_bg;
-    bg_error(n_eigen_vectors) = sqrt(mean(bg_err(:).^2));
+    BG_EV = phi*Bi+mu;  % Reconstruct from projection
+    bg_err = BG_EV - true_bg;
+    bg_error(n_eigen_vector) = sqrt(mean(bg_err(:).^2));
     
-    BG_SEV = reshape(BG_SEV,blk_sz,blk_sz);
-    
-    BiNonPCA = phiNonPCA'*Xi;    % Project onto Weakest EigenVectors
-    BG_WEV = phiNonPCA*BiNonPCA+mu;  % Reconstruct from projection
-    BG_WEV = reshape(BG_WEV,blk_sz,blk_sz);
-    
+    BG_EV = reshape(BG_EV,blk_sz,blk_sz);
+        
     threshold = 30;
-    FG_SEV = abs(BG_SEV-double(sample_frame))>threshold;
-    FG_WEV = abs(BG_WEV-double(sample_frame))>threshold;
+    FG_SEV = abs(BG_EV-double(sample_frame))>threshold;
     
+    if any(n_eigen_vector==print_list)
     figure(1);
-    subplot(2,3,1); imshow(sample_frame);title(['EV ', num2str(n_eigen_vectors)]);
-    subplot(2,3,2);imshow(uint8(BG_SEV));title('EigenBackground-StrongEigenVectors')
-%     pause
-%     subplot(2,3,3);imagesc(uint8(FG_SEV));
-%     title('Detected Foreground'); axis equal; axis off;
-%     subplot(2,3,4); imshow(sample_frame);title('Current Frame');
-%     subplot(2,3,5);imshow(uint8(BG_WEV));title('EigenBackground-WeakEigenVectors')
-%     subplot(2,3,6);imagesc(uint8(FG_WEV));
-%     title('Detected Foreground'); axis equal; axis off;
+    subplot(1,2,1); imshow(sample_frame);title('Frame No. 16:  ')
+    subplot(1,2,2);imshow(uint8(BG_EV));title(sprintf('Recon. BG of 16 on EV %d, RMSE=%4.2f',n_eigen_vector, bg_error(n_eigen_vector)));
+    pause(1)
     
     output_path = ['output/highway/ev_frames_1_' num2str(n_frames)];
     mkdir(output_path)
-    file_name = sprintf('%s/%d_r-%d_%d', output_path,blk_sz,n_eigen_vectors,sample_frame_no);
-%     imwrite(sample_frame,[file_name '.jpg']);
-%     imwrite(uint8(BG_SEV),[file_name '_StrongEigenVectors_BG.jpg']);
-%     imwrite(histeq(uint8(BG_SEV)),[file_name '_StrongEigenVectors_BG_heq.jpg']);
-%     imwrite(FG_SEV,[file_name '_StrongEigenVectors_FG.png']);
-    x = phi;
-    x = (x-min(x))/(max(x)-min(x))*255;
-%     imwrite(uint8(reshape(x,blk_sz,blk_sz)),[file_name '_StrongEigenVectors_raw.png']);
-%     
-%     
-%     imwrite(uint8(BG_WEV),[file_name '_WeakEigenVectors_BG.jpg']);
-%     imwrite(histeq(uint8(BG_WEV)),[file_name '_WeakEigenVectors_BG_heq.jpg']);
-%     imwrite(FG_WEV,[file_name '_WeakEigenVectors_FG.png']);
-%     x = phiNonPCA;
-%     x = (x-min(x))/(max(x)-min(x))*255;
-%     imwrite(uint8(reshape(x,blk_sz,blk_sz)),[file_name '_WeakEigenVectors_raw.png']);
-    
+    file_name = sprintf('%s/EV-%d_%d', output_path,n_eigen_vector,sample_frame_no);
+    imwrite(uint8(BG_EV),[file_name '.jpg']);
+    end
 end
-%%
-bg_error([1,3,5,7])
-% bg_error([60,58,56,54])
-bg_error([end,end-2,end-4,end-6])
-
 
